@@ -1,0 +1,17 @@
+﻿@model test.ViewModel.Reports.CsseVMs.CsseVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:textbox field="Entity.Country" />
+<wt:textbox field="Entity.Province" />
+<wt:textbox field="Entity.Lat" />
+<wt:textbox field="Entity.Long" />
+<wt:datetime field="Entity.Date" />
+<wt:textbox field="Entity.ConfirmedCase" />
+</wt:row>
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

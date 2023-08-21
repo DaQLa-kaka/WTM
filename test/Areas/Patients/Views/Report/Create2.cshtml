@@ -1,0 +1,14 @@
+﻿@model test.ViewModel.Patients.ReportVMs.ReportVM
+
+<wt:form vm="@Model">
+    <wt:row items-per-row="ItemsPerRowEnum.One">
+        <wt:display field="Entity.Patient.PatientName" />
+        <wt:textbox field="Entity.Temprature" />
+        <wt:textbox field="Entity.Remark" />
+    </wt:row>
+    <wt:hidden field="Entity.PatientId"/>
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

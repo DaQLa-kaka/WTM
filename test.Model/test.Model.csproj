@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+ </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="WalkingTec.Mvvm.Core" Version="6.3.24" />
+    <PackageReference Include="WalkingTec.Mvvm.Mvc" Version="6.3.24" />
+    <PackageReference Include="WalkingTec.Mvvm.TagHelpers.LayUI" Version="6.3.24" />
+  </ItemGroup>
+</Project>
+

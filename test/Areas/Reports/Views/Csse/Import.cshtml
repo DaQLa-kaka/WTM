@@ -1,0 +1,11 @@
+﻿@model test.ViewModel.Reports.CsseVMs.CsseImportVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:form vm="@Model">
+    <wt:upload field="UploadFileId" label-text="上传模板" custom-type="csv" connection-string="default" />
+    <wt:grid vm="ErrorListVM" use-local-data="true" hidden-checkbox="true" hidden-grid-index="true" hidden-panel="true" height="300" />
+    <wt:row align=" AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

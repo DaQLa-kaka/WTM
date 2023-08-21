@@ -1,0 +1,30 @@
+﻿@model test.ViewModel.Patients.PatientVMs.PatientListVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:treecontainer items="AllCity" id-field="Searcher.LocationId" height="800">
+<wt:searchpanel vm="@Model" reset-btn="true" old-post=true>
+<wt:row items-per-row="ItemsPerRowEnum.Three">
+<wt:textbox field="Searcher.PatientName" />
+<wt:textbox field="Searcher.IdNumber" />
+<wt:combobox field="Searcher.Gender" empty-text="@Localizer["Sys.All"]" />
+<wt:combobox field="Searcher.Status" empty-text="@Localizer["Sys.All"]" />
+<wt:combobox field="Searcher.HospitalID" items="Searcher.AllHospitals" empty-text="@Localizer["Sys.All"]" />
+<wt:combobox field="Searcher.SelectedVirusesIDs" items="Searcher.AllVirusess" empty-text="@Localizer["Sys.All"]" />
+        <wt:hidden field="Searcher.LocationId">
+</wt:row>
+</wt:searchpanel>
+<wt:quote>
+    <wt:row items-per-row="ItemsPerRowEnum.Three">
+        <wt:display field="Summary.ZhiYu"/> 
+        <wt:display field="Summary.SiWang"/>
+        <wt:display field="Summary.QueZhen"/>
+    </wt:row>
+</wt:quote>
+<wt:grid vm="@Model" url="/Patients/Patient/Search" limit="50" need-show-total=true hidden-grid-index=true/>
+</wt:treecontainer>
+
+<script>
+    function test() {
+        alert("test");
+    }
+</script>

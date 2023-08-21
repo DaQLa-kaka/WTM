@@ -1,0 +1,11 @@
+﻿@model test.ViewModel.BasicData.VirusVMs.VirusListVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:searchpanel vm="@Model" reset-btn="true">
+<wt:row items-per-row="ItemsPerRowEnum.Three">
+<wt:textbox field="Searcher.VirusCode" />
+<wt:textbox field="Searcher.VirusName" />
+<wt:combobox field="Searcher.VirusType" empty-text="@Localizer["Sys.All"]" />
+</wt:row>
+</wt:searchpanel>
+<wt:grid vm="@Model" url="/BasicData/Virus/Search"/>

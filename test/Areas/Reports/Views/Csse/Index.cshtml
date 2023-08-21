@@ -1,0 +1,10 @@
+﻿@model test.ViewModel.Reports.CsseVMs.CsseListVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:searchpanel vm="@Model" reset-btn="true">
+<wt:row items-per-row="ItemsPerRowEnum.Three">
+<wt:textbox field="Searcher.Country" />
+<wt:textbox field="Searcher.Province" />
+</wt:row>
+</wt:searchpanel>
+<wt:grid vm="@Model" url="/Reports/Csse/Search"/>

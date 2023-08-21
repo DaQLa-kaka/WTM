@@ -1,0 +1,57 @@
+﻿@model test.ViewModel.Patients.PatientVMs.PatientListVM2
+
+
+
+
+<wt:searchpanel vm="@Model" reset-btn="true" grid-id="grid1">
+    <wt:row items-per-row="ItemsPerRowEnum.Three">
+        <wt:textbox field="Searcher.PatientName" />
+        <wt:textbox field="Searcher.IdNumber" />
+        <wt:combobox field="Searcher.Gender" empty-text="全部" />
+        <wt:combobox field="Searcher.Status" empty-text="全部" />
+        <wt:combobox field="Searcher.SelectedVirusesIDs" items="Searcher.AllVirusess" empty-text="全部" />
+    </wt:row>
+</wt:searchpanel>
+
+
+<wt:grid vm="@Model" id="grid1" url="/Patients/Patient2/Search" limit="50" hidden-grid-index="true" />
+
+<wt:grid vm="@Model.Reports" id="grid2" url="/Patients/Report/Search2" limit="50" hidden-grid-index="true" height="300"/>
+
+
+<script>
+    var patientid = 0;
+    var patientname = "";
+
+    function report(id) {
+        patientid = id;
+
+        var loaddata = layui.table.cache['grid1'];
+        loaddata.forEach(function (val, i) {
+            if (val.ID == id) {
+                patientname = val.PatientName;
+            }
+        });
+        layui.table.reload('grid2',{ where: {"Searcher.PatientID":id}});
+   }
+
+    function CreateReport() {
+        if (patientid == 0) {
+            layui.layer.alert('请选择一个病例');
+        }
+        else {
+
+            ff.OpenDialog('/Patients/Report/Create2/' + patientid + "?patientName=" + patientname, '@Guid.NewGuid()', '添加追踪', 400);
+        }
+    }
+
+
+    function report2(ids,objs) {
+        patientid = objs[0].ID;
+        patientname = objs[0].PatientName;
+
+        layui.table.reload('grid2',{ where: {"Searcher.PatientID":patientid}});
+   }
+
+</script>
+

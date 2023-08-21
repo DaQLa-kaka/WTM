@@ -1,0 +1,13 @@
+﻿@model test.ViewModel.Patients.PatientVMs.PatientVM
+
+<wt:form vm="@Model">
+    <wt:row items-per-row="ItemsPerRowEnum.Two">
+        <wt:display field="Entity.PatientName" />
+        <wt:combobox field="Entity.Status" />
+    </wt:row>
+    <wt:hidden field="Entity.ID" />
+    <wt:row align="AlignEnum.Right">
+        <wt:submitbutton />
+        <wt:closebutton />
+    </wt:row>
+</wt:form>

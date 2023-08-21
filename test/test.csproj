@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  
+    <CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
+</PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Patients\Controllers\Patient2Controller.cs" />
+    <Compile Remove="Areas\Patients\Controllers\PatientController21.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Patients\Views\Report\Create21.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Patients\Views\Patient2\BatchDelete.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\BatchEdit.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\ChangeStatus.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\Create.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\Delete.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\Details.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\Edit.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\Generate.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\Import.cshtml" />
+    <None Include="Areas\Patients\Views\Patient2\Index.cshtml" />
+  </ItemGroup>
+
+
+
+
+  <ItemGroup>
+    <PackageReference Include="WalkingTec.Mvvm.Core" Version="6.3.24" />
+    <PackageReference Include="WalkingTec.Mvvm.TagHelpers.LayUI" Version="6.3.24" />
+    <PackageReference Include="WalkingTec.Mvvm.Mvc" Version="6.3.24" />
+</ItemGroup>
+
+  <ItemGroup>
+   <ProjectReference Include="..\test.Model\test.Model.csproj" />
+    <ProjectReference Include="..\test.DataAccess\test.DataAccess.csproj" />
+    <ProjectReference Include="..\test.ViewModel\test.ViewModel.csproj" />
+ </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Patients\Views\Patient2\BatchDelete.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\BatchEdit.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\ChangeStatus.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\Create.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\Delete.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\Details.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\Edit.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\Generate.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Patients\Views\Patient2\Import.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
+
+

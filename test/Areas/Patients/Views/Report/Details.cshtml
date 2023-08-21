@@ -1,0 +1,13 @@
+﻿@model test.ViewModel.Patients.ReportVMs.ReportVM
+@inject IStringLocalizer<Program> Localizer;
+
+<wt:form vm="@Model">
+<wt:row items-per-row="ItemsPerRowEnum.Two">
+<wt:display field="Entity.Temprature" />
+<wt:display field="Entity.Remark" />
+<wt:display field="Entity.Patient.PatientName" />
+</wt:row>
+    <wt:row align="AlignEnum.Right">
+        <wt:closebutton />
+    </wt:row>
+</wt:form>
